@@ -14,10 +14,12 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
       </Head>
-       
+    <div className='bg-gray-900 min-h-screen' >
+
     <Nav />
     <Component {...pageProps} />
     <Footer />
+    </div>
     </>
   )
 }

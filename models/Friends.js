@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 
 const FriendSchema = new mongoose.Schema({
-    "Key":{type:String,required:true},
-});
+    "UserName":{type:String,required:true},
+    "Answer":[],
+    "FriendScore":[]
+},{timestamps:true});
 
 mongoose.models = {}
 
-export default mongoose.model( "FriendQuiz" , FriendSchema )
+export default mongoose.model( "Friend" , FriendSchema )

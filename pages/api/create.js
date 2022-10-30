@@ -1,12 +1,13 @@
-import FriendQuiz from '../../models/Friends'
+import Friend from '../../models/Friends'
 import connectDB from '../../middelwear/dbconnect';
 
 const handler = async (req, res) => {
   
   if (req.method === 'POST') {
 
-      let p = new FriendQuiz({
-        "Key": req.body.key,
+      let p = new Friend({
+        "UserName": req.body.name,
+        "Answer": req.body.answer
       })
       await p.save();
       res.status(200).json({ qusetionadded : true , id : p._id })    

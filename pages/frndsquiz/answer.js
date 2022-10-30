@@ -1,15 +1,23 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import question from './question'
+import Send from './Send'
 
 const Answer = ({name}) => {
     const [quenum, setQuenum] = useState(0)
     const [ans, setAns] = useState([])
-    let key = Math.random()*1000000000000000;
+    const [id, setId] = useState(false)
+
+    useEffect(() => {
+      if(!question[quenum] && !id){
+        console.log('send answer')
+        create();
+    };
+  });
+
     const router = useRouter();
     const create = async ()=>{
         let data = {
-            "key":key.toString(),
             "name": name,
             "answer": ans
         }
@@ -26,7 +34,8 @@ const Answer = ({name}) => {
     
             let response = await res.json();
             if (response.qusetionadded) {
-                 router.push(`/challenge/${response.id}`)
+console.log(response)
+                 setId(response.id)
             }
             else {
     console.log('failed')
@@ -35,18 +44,15 @@ const Answer = ({name}) => {
             console.log(error)
         }
     }
-    if(!question[quenum]){
-        console.log('send answer')
-        create();
-    }
     const handleClick = (num)=>{
         setAns(ans => [...ans, num]);
         setQuenum(quenum+1)
     }
+    
+    
   return (
       <div>
-    {question[quenum] && 
-             <section className="text-gray-300 body-font bg-gray-900">
+    {question[quenum] ?  <section className="text-gray-300 body-font bg-gray-900">
              <div className="container px-5 py-2 mx-auto flex flex-wrap">
                <div className="flex flex-col text-center w-full mb-20">
                  <div className="p-4 md:w-1/3 mx-auto mb-7">
@@ -67,7 +73,7 @@ const Answer = ({name}) => {
                     {question[quenum].options.map((op)=>{
                      return (<div key={op.no} onClick={()=>{handleClick(op.no)}} className=" mx-auto">
                        <div className="flex flex-col items-center m-2">
-                         <img className='hover:outline rounded-2xl ' src={op.link} alt="" />
+                         <img className='hover:outline rounded-2xl  hover:border hover:shadow-sm hover:shadow-green-400 hover:border-green-400 ' src={op.link} alt="" />
                        </div>
                      </div>)
                    })} 
@@ -77,6 +83,8 @@ const Answer = ({name}) => {
              </div>
 
            </section>
+    :
+    <Send id={id}/>
     }
     </div>
   )

@@ -5,6 +5,6 @@ export default function handler(req, res) {
     res.status(200).json({ name: ' post' })
   }
   else{
-    res.status(200).json({ name: 'vikas' })
+    res.status(200).json({ name: 'Pantu' })
   }
 }

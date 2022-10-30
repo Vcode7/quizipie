@@ -2,14 +2,21 @@ import React,{useEffect ,useState} from 'react'
 import Login from './Login'
 import Logout from "./logout";
 
+const jwt = require('jsonwebtoken');
+
+
 export const Nav = () => {
-    
+    const [username, setUsername] = useState('')
     const [userstate, setuserstate] = useState(false);
-    
     useEffect(() => {
-        setuserstate(localStorage.getItem("token"));
+
+        var token = localStorage.getItem("token"); 
+        if(token){
+            setuserstate(token );
+            var decoded = jwt.verify(token, '7204968501');
+            setUsername(decoded.user.username)
+        }
     }, [])
-    
     return (
         <>
 
@@ -25,7 +32,7 @@ export const Nav = () => {
                         <a className="mr-5 hover:text-white">First Link</a>
                     </nav>
                 
-                    {!userstate ? <Login  setuser={setuserstate} /> : <Logout setuser={setuserstate} />}
+                    {!userstate ? <Login  setuser={setuserstate} /> : <Logout username={username} setuser={setuserstate} />}
                     
                   
                     

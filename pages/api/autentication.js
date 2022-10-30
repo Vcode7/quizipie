@@ -14,8 +14,10 @@ const handler = async (req, res) => {
         Email: req.body.email,
         Password: CryptoJS.AES.encrypt(JSON.stringify(req.body.password), '7204968501').toString(),
       })
+
       await p.save();
       var token = jwt.sign({username : req.body.name}, '7204968501');
+      
       res.status(200).json({ login: true , token })
       }
       else{

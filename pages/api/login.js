@@ -19,7 +19,7 @@ const handler = async (req, res) => {
 
         if (decryptedData == req.body.password) 
         {
-          var token = jwt.sign({username : req.body.name}, '7204968501');
+          var token = jwt.sign({user : { "username" : userem[0].UserName , "id": userem[0]._id}}, '7204968501');
           res.status(200).json({ login: true , token })     
         }
         else {

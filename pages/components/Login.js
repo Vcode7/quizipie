@@ -63,10 +63,11 @@ const Login = ({ setuser }) => {
                     draggable: true,
                     progress: undefined,
                 });
+              
                 localStorage.setItem('token', response.token);
                 setTimeout(() => {
                     setuser(response.token)
-                }, 2000);
+                }, 1000);
                 setShowlogin(false);
                 setshowsingin(false);
 
