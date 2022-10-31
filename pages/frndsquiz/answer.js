@@ -24,7 +24,7 @@ const Answer = ({name}) => {
           console.log(data)
           try {
     
-            let res = await fetch('http://localhost:3000/api/create', {
+            let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/create`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

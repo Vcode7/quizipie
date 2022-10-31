@@ -1,28 +1,13 @@
 const Menuitems = [
   {
-    title: "Dashbaord",
-    icon: "home",
-    href: "/admin",
-  },
-  {
-    title: "Forms",
+    title: "Add Qestion",
     icon: "layout",
-    href: "/admin/forms",
+    href: "/admin/addquestion",
   },
   {
-    title: "Images",
-    icon: "image",
-    href: "/image",
-  },
-  {
-    title: "Pagination",
-    icon: "user",
-    href: "/pagination",
-  },
-  {
-    title: "Tables",
+    title: "view",
     icon: "grid",
-    href: "/admin/table",
+    href: "/admin/view",
   },
 ];
 

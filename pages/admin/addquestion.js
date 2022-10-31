@@ -46,7 +46,7 @@ const Forms = () => {
       console.log(data)
       try {
 
-        let res = await fetch('http://localhost:3000/api/addquestion', {
+        let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addquestion`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -57,6 +57,7 @@ const Forms = () => {
         let response = await res.json();
         if (response.qusetionadded) {
 console.log('successfully added')
+
         }
         else {
 console.log('failed')

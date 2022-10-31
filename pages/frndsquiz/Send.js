@@ -12,7 +12,7 @@ import { FacebookShareButton } from "react-share";
 
 const Send = ({id}) => {
     const [copied, setCopied] = useState(false)
-    const url = `http://localhost:3000/frndsquiz/challenge/${id}`
+    const url = `${process.env.NEXT_PUBLIC_HOST}/frndsquiz/challenge/${id}`
 
   return (
     <div className='text-gray-400 bg-gray-900 body-font'>

@@ -24,7 +24,7 @@ const Answer = ({ Ans ,username, id }) => {
         "name":PlayerName,
         "score": score
       }
-      let res = await fetch('http://localhost:3000/api/scoreupdate', {
+      let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/scoreupdate`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -140,11 +140,11 @@ const Answer = ({ Ans ,username, id }) => {
             <p className="mb-8 leading-relaxed">join your friendship dare quiz from {username}</p>
             <div className="flex w-full justify-center items-end">
               <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                <label htmlfor="hero-field" className="leading-7 text-sm text-gray-400">Enter The name</label>
+                <label htmlFor="hero-field" className="leading-7 text-sm text-gray-400">Enter The name</label>
                 <input value={iPlayerName} onChange={handlechange} type="text" id="hero-field" name="hero-field" className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-red-900 focus:bg-transparent focus:border-red-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
               </div>
       
-              <button onClick={handleclick} className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
+              <button onClick={handleclick} className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Next</button>
             </div>
       
           </div>

@@ -33,13 +33,7 @@ const ProfileDD = () => {
         onClick={handleClick4}
       >
         <Box display="flex" alignItems="center">
-          <Image
-            src={userimg}
-            alt={userimg}
-            width="30"
-            height="30"
-            className="roundedCircle"
-          />
+          
           <Box
             sx={{
               display: {
@@ -60,11 +54,12 @@ const ProfileDD = () => {
             <Typography
               variant="h5"
               fontWeight="700"
+              
               sx={{
                 ml: 1,
               }}
             >
-              Julia
+              vikas
             </Typography>
             <FeatherIcon icon="chevron-down" width="20" height="20" />
           </Box>

@@ -3,14 +3,14 @@ import React, { useState , useEffect } from 'react'
 import Link from 'next/link'
 
 const Result = ({id , score}) => {
+    let i=0;
     const [fs, setFs] = useState([])
     useEffect(() => {
             getscore()    
-
-    },fs);
+    }, []);
     const getscore = async ()=>{
 console.log(id)
-        let res = await fetch('http://localhost:3000/api/getscore', {
+        let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getscore`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -39,22 +39,22 @@ console.log(id)
         </div>
   
   
-        <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+        <section className="text-gray-600 body-font">
+    <div className="container px-5 py-24 mx-auto flex flex-wrap flex-col">
   
     <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Friends Score</h1>
   
-        <div class="flex flex-col">
-    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-        <div class="overflow-hidden">
-          <table class="min-w-full border text-center">
-            <thead class="border-b">
+        <div className="flex flex-col">
+    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="overflow-hidden">
+          <table className="min-w-full border text-center">
+            <thead className="border-b">
               <tr>
-                <th scope="col" class="text-lg font-medium text-white px-6 py-4 border-r">
+                <th scope="col" className="text-lg font-medium text-white px-6 py-4 border-r">
                   Name
                 </th>
-                <th scope="col" class="text-lg font-medium text-white px-6 py-4 border-r">
+                <th scope="col" className="text-lg font-medium text-white px-6 py-4 border-r">
                   Score
                 </th>
               </tr>
@@ -62,12 +62,13 @@ console.log(id)
             <tbody>
               
         {fs.map((f)=>{
+          i++
                        return (
-                        <tr class="border-b">
-                        <td class="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap border-r">
+                        <tr key={i} className="border-b">
+                        <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap border-r">
                           {f.FriendName}
                         </td>
-                        <td class="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap border-r">
                           {f.FriendScore}
                         </td>
                         </tr>

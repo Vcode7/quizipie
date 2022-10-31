@@ -8,9 +8,9 @@ const Login = ({ setuser }) => {
 
     const [showlogin, setShowlogin] = useState(false);
     const [showsingin, setshowsingin] = useState(false);
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     function handleClick(btn) {
         if (btn == "Login") {
@@ -40,7 +40,7 @@ const Login = ({ setuser }) => {
         console.log(data)
         try {
 
-            let res = await fetch('http://localhost:3000/api/autentication', {
+            let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/autentication`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -101,7 +101,7 @@ const Login = ({ setuser }) => {
         e.preventDefault();
 
         let data = { email, password }
-        let res = await fetch('http://localhost:3000/api/login', {
+        let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -188,11 +188,11 @@ const Login = ({ setuser }) => {
 
 
 
-                                <label htmlhtmlfor="email" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your email</label>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your email</label>
                                 <input value={email} onChange={handleChange} type="email" name="email" id="email" className="bg-gray-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />
 
                                 <div>
-                                    <label htmlhtmlfor="password" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your password</label>
+                                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your password</label>
                                     <input value={password} onChange={handleChange} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
                                 </div>
                                 <div className="flex justify-between">
@@ -200,9 +200,7 @@ const Login = ({ setuser }) => {
                                         <div className="flex items-center h-5">
                                             <input id="remember" type="checkbox" value="" className="w-4 h-4 bg-gray-500 rounded border border-gray-300 focus:ring-3 focus:ring-red-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-red-600 dark:ring-offset-gray-800" required="" />
                                         </div>
-                                        <label htmlhtmlfor="remember" className="ml-2 text-sm font-medium text-white dark:text-gray-300">Remember me</label>
                                     </div>
-                                    <a href="#" className="text-sm text-blue-100 hover:underline dark:text-red-500">Lost Password?</a>
                                 </div>
                                 <button type="submit" className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Login to your account</button>
                                 <div className="text-sm font-medium text-white dark:text-gray-300">
@@ -228,15 +226,15 @@ const Login = ({ setuser }) => {
                             <h3 className="mb-4 text-xl font-medium text-white">SingIn in to our platform</h3>
                             <form onSubmit={handleSingin} className="space-y-6" method='POST'>
                                 <div>
-                                    <label htmlhtmlfor="sname" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Name</label>
+                                    <label htmlFor="sname" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Name</label>
                                     <input value={name} onChange={handleChange} type="name" name="name" id="sname" className="bg-gray-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />
                                 </div>
                                 <div>
-                                    <label htmlhtmlfor="semail" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Email</label>
+                                    <label htmlFor="semail" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Email</label>
                                     <input value={email} onChange={handleChange} type="email" name="email" id="semail" className="bg-gray-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />
                                 </div>
                                 <div>
-                                    <label htmlhtmlfor="spassword" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Password</label>
+                                    <label htmlFor="spassword" className="block mb-2 text-sm font-medium text-white dark:text-gray-300">Your Password</label>
                                     <input value={password} onChange={handleChange} type="password" name="password" id="spassword" className="bg-gray-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
                                 </div>
                                 <div className="flex justify-between">
