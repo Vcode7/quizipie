@@ -3,7 +3,7 @@ import {Question} from '../question'
 import FriendQuiz from '../../../models/Friends'
 import mongoose from 'mongoose'
 import Image from 'next/image'
-
+import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import Result from '../Result'
