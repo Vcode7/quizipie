@@ -128,6 +128,7 @@ const Answer = ({ Ans ,username, id }) => {
 
            </section>
            :
+           
            <Result score={score} id={id}/>
     }
     </>}
