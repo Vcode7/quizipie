@@ -101,17 +101,3 @@ const Result = ({id , score}) => {
 }
 
 export default Result
-
-
-export async function getServerSideProps(context) {
-    if(!mongoose.connections[0].readyState){
-      await mongoose.connect(process.env.MONGO_URI)
-    }
-    let score = await Score.find({ "Userid": context.query.id })
-  
-    return { props:  {
-
-      fs : JSON.parse(JSON.stringify(score)),
-
-    }  }
-}

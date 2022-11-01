@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Result from './Result'
+//import Result from '../Result'
 
 const Answer = ({ Ans ,username, id }) => {
     const [quenum, setQuenum] = useState(0)
@@ -128,8 +128,8 @@ const Answer = ({ Ans ,username, id }) => {
 
            </section>
            :
-           
-           <Result score={score} id={id}/>
+
+           <div>hh</div>
     }
     </>}
         </div>
