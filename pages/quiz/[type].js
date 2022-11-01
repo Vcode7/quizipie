@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Result from '../components/result';
+//import Result from '../components/result';
 
 
 export default function Quiz({Quizs}) {
@@ -144,9 +144,9 @@ export default function Quiz({Quizs}) {
                 </div>
               </div>
             </section>
-          </div> : <Result score={score} winner="true"/> }
+          </div> : <div>ff</div> }
       </div> 
-          : <Result score={score} winner="false"/> }
+          : <div>ff</div>  }
       </section>
     </div>
   )

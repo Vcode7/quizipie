@@ -129,7 +129,10 @@ const Answer = ({ Ans ,username, id }) => {
            </section>
            :
 
-           <div>hh</div>
+           <div>
+
+ff
+           </div>
     }
     </>}
         </div>
