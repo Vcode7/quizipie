@@ -1,7 +1,8 @@
-import { useRouter } from 'next/router'
+
 import React, { useState , useEffect} from 'react'
-import question from './question'
+import {Question} from './question'
 import Send from './Send'
+import Image from 'next/image'
 
 const Answer = ({name}) => {
     const [quenum, setQuenum] = useState(0)
@@ -9,14 +10,12 @@ const Answer = ({name}) => {
     const [id, setId] = useState(false)
 
     useEffect(() => {
-      if(!question[quenum] && !id){
+      if(!Question[quenum] && !id){
         console.log('send answer')
-        create();
+        Create();
     };
   });
-
-    const router = useRouter();
-    const create = async ()=>{
+    const Create = async ()=>{
         let data = {
             "name": name,
             "answer": ans
@@ -52,7 +51,7 @@ console.log(response)
     
   return (
       <div>
-    {question[quenum] ?  <section className="text-gray-300 body-font bg-gray-900">
+    {Question[quenum] ?  <section className="text-gray-300 body-font bg-gray-900">
              <div className="container px-5 py-2 mx-auto flex flex-wrap">
                <div className="flex flex-col text-center w-full mb-20">
                  <div className="p-4 md:w-1/3 mx-auto mb-7">
@@ -62,18 +61,18 @@ console.log(response)
                          <span>{quenum}</span>
                        </div>
                        <h2 className="text-white mx-10 text-lg title-font font-medium">
-                         {question[quenum].question}
+                         You {Question[quenum].question}
                        </h2>
                      </div>
                    </div>
                  </div>
                  <hr className='bg-gray-200'/>
                  <div className="container px-5 py-24 md:py-4 mx-auto">
-                   <div className="grid grid-cols-2 md:grid-cols-4 md:mt-10 -m-4 w-full text-center">
-                    {question[quenum].options.map((op)=>{
-                     return (<div key={op.no} onClick={()=>{handleClick(op.no)}} className=" mx-auto">
-                       <div className="flex flex-col items-center m-2">
-                         <img className='hover:outline rounded-2xl  hover:border hover:shadow-sm hover:shadow-green-400 hover:border-green-400 ' src={op.link} alt="" />
+                   <div className="grid grid-cols-2 md:grid-cols-4 md:mt-10 -m-4 ml-1 w-full text-center">
+                    {Question[quenum].options.map((op)=>{
+                     return (<div key={op.no} onClick={()=>{handleClick(op.no)}} className=" mx-auto ">
+                       <div className="flex flex-col items-center m-3 ">
+                         <Image width={200} height={180} className='hover:outline rounded-2xl  hover:border hover:shadow-sm hover:shadow-green-400 hover:border-green-400 ' src={op.link} alt="" />
                        </div>
                      </div>)
                    })} 

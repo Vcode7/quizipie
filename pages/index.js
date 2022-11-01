@@ -1,5 +1,5 @@
 
-import { Stater } from './components/Stater';
+import Stater from './components/Stater';
 
 
 export default function Home() {

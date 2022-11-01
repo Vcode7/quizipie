@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Answer from './answer'
 
-const create = () => {
+const Create = () => {
   const [name, setName] = useState('')
   const [next, setNext] = useState(false)
   const handlechange = (e)=>{
@@ -35,4 +35,4 @@ const create = () => {
   )
 }
 
-export default create
+export default Create

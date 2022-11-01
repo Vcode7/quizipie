@@ -1,11 +1,12 @@
 import React,{useEffect ,useState} from 'react'
 import Login from './Login'
 import Logout from "./logout";
+import Link from 'next/link';
 
 const jwt = require('jsonwebtoken');
 
 
-export const Nav = () => {
+const Nav = () => {
     const [username, setUsername] = useState('')
     const [userstate, setuserstate] = useState(false);
     useEffect(() => {
@@ -29,7 +30,7 @@ export const Nav = () => {
                         <span className="ml-3 text-xl">Quizipie</span>
                     </a>
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-                        <a className="mr-5 hover:text-white">First Link</a>
+                        <Link href="/"><a className="mr-5 hover:text-white">Home</a></Link>
                     </nav>
                 
                     {!userstate ? <Login  setuser={setuserstate} /> : <Logout username={username} setuser={setuserstate} />}
@@ -40,3 +41,5 @@ export const Nav = () => {
             </header>        </>
     )
 }
+
+export default Nav

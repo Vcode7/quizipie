@@ -1,7 +1,8 @@
 import React, { useState , useEffect } from 'react'
-import question from '../question'
+import {Question} from '../question'
 import FriendQuiz from '../../../models/Friends'
 import mongoose from 'mongoose'
+import Image from 'next/image'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -41,7 +42,7 @@ const Answer = ({ Ans ,username, id }) => {
     }
 
     useEffect(() => {
-      if(!question[quenum]){
+      if(!Question[quenum]){
         console.log('send answer')
         update();       
     };
@@ -90,7 +91,7 @@ const Answer = ({ Ans ,username, id }) => {
 
             {Ans && 
             <>
-    {question[quenum] ?
+    {Question[quenum] ?
                
              <section className="text-gray-300 body-font bg-gray-900">
              <div className="container px-5 py-2 mx-auto flex flex-wrap">
@@ -99,24 +100,24 @@ const Answer = ({ Ans ,username, id }) => {
                  <div className=" px-10 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
                           Score : <span>{score}</span>
                         </div>
-                   <div className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
+                        <div className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
                      <div className="flex items-center mb-3 my-2">
                        <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                          <span>{quenum}</span>
                        </div>
                        <h2 className="text-white mx-10 text-lg title-font font-medium">
-                         {question[quenum].question}
+                         You Friend {Question[quenum].question}
                        </h2>
                      </div>
                    </div>
                  </div>
                  <hr className='bg-gray-200'/>
                  <div className="container px-5 py-24 md:py-4 mx-auto">
-                   <div className="grid grid-cols-2 md:grid-cols-4 md:mt-10 -m-4 w-full text-center">
-                    {question[quenum].options.map((op)=>{
+                   <div className="grid grid-cols-2 md:grid-cols-4 md:mt-10 -m-4 w-full text-center ml-1">
+                    {Question[quenum].options.map((op)=>{
                      return (<div key={op.no} onClick={()=>{handleClick(op.no)}} className=" mx-auto">
                        <div className="flex flex-col items-center m-2">
-                         <img className='hover:outline rounded-2xl ' src={op.link} alt="" />
+                         <Image className='hover:outline rounded-2xl ' width={200} height={180} src={op.link} alt="" />
                        </div>
                      </div>)
                    })} 

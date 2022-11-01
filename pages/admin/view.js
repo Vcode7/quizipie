@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import ProductPerfomance from "../../src/components/dashboard/ProductPerfomance";
 import * as React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../src/theme/theme";
@@ -11,7 +10,7 @@ const Tables = () => {
       <FullLayout>
         <Grid container spacing={0}>
           <Grid item xs={12} lg={12}>
-            <ProductPerfomance />
+            pending..
           </Grid>
         </Grid>
       </FullLayout>

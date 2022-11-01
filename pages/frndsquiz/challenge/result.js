@@ -3,13 +3,9 @@ import React, { useState , useEffect } from 'react'
 import Link from 'next/link'
 
 const Result = ({id , score}) => {
-    let i=0;
     const [fs, setFs] = useState([])
-    useEffect(() => {
-            getscore()    
-    }, []);
+    
     const getscore = async ()=>{
-console.log(id)
         let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getscore`, {
             method: 'POST',
             headers: {
@@ -22,7 +18,11 @@ console.log(id)
                 setFs(respo.score)
             }
         }
- 
+        useEffect(() => {
+          setTimeout(() => {
+            getscore()    
+          }, 1000);
+        });
    
   return ( 
     <div>  <section className="text-gray-400 bg-gray-900 body-font">
@@ -62,9 +62,8 @@ console.log(id)
             <tbody>
               
         {fs.map((f)=>{
-          i++
                        return (
-                        <tr key={i} className="border-b">
+                        <tr key={f._id} className="border-b">
                         <td className="text-lg text-gray-100 font-light px-6 py-4 whitespace-nowrap border-r">
                           {f.FriendName}
                         </td>

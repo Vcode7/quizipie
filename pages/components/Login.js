@@ -204,7 +204,7 @@ const Login = ({ setuser }) => {
                                 </div>
                                 <button type="submit" className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Login to your account</button>
                                 <div className="text-sm font-medium text-white dark:text-gray-300">
-                                    Not registered? <a href="#" onClick={() => { handleClick('Signin') }} className=" hover:underline dark:text-red-500">Create account</a>
+                                    Not registered? <p onClick={() => { handleClick('Signin') }} className=" hover:underline dark:text-red-500">Create account</p>
                                 </div>
                             </form>
                         </div>
@@ -241,7 +241,7 @@ const Login = ({ setuser }) => {
                                 </div>
                                 <button type="submit" className="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">SingIn to your account</button>
                                 <div className="text-sm font-medium text-white dark:text-gray-300">
-                                    already registered? <a href="#" onClick={() => { handleClick('Login') }} className=" hover:underline dark:text-red-500">login</a>
+                                    already registered? <p href="#" onClick={() => { handleClick('Login') }} className=" hover:underline dark:text-red-500">login</p>
                                 </div>
                             </form>
                         </div>
