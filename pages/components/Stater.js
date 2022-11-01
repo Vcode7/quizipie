@@ -31,7 +31,7 @@ const Stater = () => {
   <div className="container px-5 text-center py-10 mx-auto flex flex-col">
     <div className="lg:w-4/6 mx-auto">
       <div className="rounded-lg mb:h-64 overflow-hidden">
-        <Image width={900} height={400} layout="responsive" alt="content" className="object-cover object-center h-full w-full" src="/quiz.jfif"/>
+        <Image width={900} height={400} layout="responsive" alt="content" className="object-cover z-0 object-center h-full w-full" src="/quiz.jfif"/>
       </div>
       <div className="flex flex-col lg:w-2/3 w-full mx-auto mt-10 sm:flex-row">
         
@@ -78,7 +78,7 @@ const Stater = () => {
 <section className="text-gray-400 bg-gray-900 body-font">
   <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10 object-cover object-center rounded">
-      <Image className="object-cover object-center rounded" alt="hero" 
+      <Image className="object-cover z-0 object-center rounded" alt="hero" 
       width={500} height={300} src="/friendquiz.png"/>
     </div>
     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
