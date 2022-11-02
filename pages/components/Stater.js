@@ -31,7 +31,7 @@ const Stater = () => {
   <div className="container px-5 text-center py-10 mx-auto flex flex-col">
     <div className="lg:w-4/6 mx-auto">
       <div className="rounded-lg mb:h-64 overflow-hidden">
-        <Image width={900} height={400} layout="responsive" alt="content" className="object-cover z-0 object-center h-full w-full" src="/quiz.jfif"/>
+        <Image width={900} height={400} objectPosition="absolute" layout="responsive"  alt="content" className="object-cover -z-2 object-center h-full w-full" src="/quiz.jfif"/>
       </div>
       <div className="flex flex-col lg:w-2/3 w-full mx-auto mt-10 sm:flex-row">
         

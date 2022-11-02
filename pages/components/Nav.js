@@ -17,11 +17,14 @@ const Nav = () => {
             var decoded = jwt.verify(token, '7204968501');
             setUsername(decoded.user.username)
         }
+        else {
+            setUsername('')
+        }
     }, [])
     return (
         <>
 
-            <header className="text-gray-400 bg-gray-900 sticky top-0 body-font">
+            <header className="text-gray-400 z-10 bg-gray-900 sticky top-0 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 justify-between flex-row items-center">
                     <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24">

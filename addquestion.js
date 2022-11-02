@@ -1,5 +1,5 @@
-import Quizdata from '../../models/Quiz'
-import connectDB from '../../middelwear/dbconnect';
+import Quizdata from './models/Quiz'
+import connectDB from './middelwear/dbconnect';
 
 
 const handler = async (req, res) => {
