@@ -171,7 +171,7 @@ const Login = ({ setuser }) => {
                 </button>
             </div>
 
-            <div
+            <div className='z-50'
                 style={{
                     display: showlogin ? "block" : "none"
                 }}
@@ -211,7 +211,7 @@ const Login = ({ setuser }) => {
                     </div>
                 </div>
             </div>
-            <div
+            <div className='z-50'
                 style={{
                     display: showsingin ? "block" : "none"
                 }}
