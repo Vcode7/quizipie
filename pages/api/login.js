@@ -2,7 +2,9 @@ import User from '../../models/User'
 import connectDB from '../../middelwear/dbconnect';
 var CryptoJS = require("crypto-js");
 var jwt = require('jsonwebtoken');
+const cors = require('cors')
 
+cors()
 const handler = async (req, res) => {
   if (req.method === 'POST') {
 

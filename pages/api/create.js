@@ -1,6 +1,8 @@
 import Friend from '../../models/Friends'
 import connectDB from '../../middelwear/dbconnect';
+const cors = require('cors')
 
+cors()
 const handler = async (req, res) => {
   
   if (req.method === 'POST') {

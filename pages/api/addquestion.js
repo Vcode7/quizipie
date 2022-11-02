@@ -1,6 +1,10 @@
 import Quizdata from '../../models/Quiz'
 import connectDB from '../../middelwear/dbconnect';
 
+const cors = require('cors')
+
+cors()
+
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     let q = new Quizdata({
