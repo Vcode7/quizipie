@@ -14,7 +14,7 @@ const Nav = () => {
         var token = localStorage.getItem("token"); 
         if(token){
             setuserstate(token );
-            var decoded = jwt.verify(token, '7204968501');
+            var decoded = jwt.verify(token, process.env.JWT_CODE);
             setUsername(decoded.user.username)
         }
         else {
@@ -34,14 +34,16 @@ const Nav = () => {
                     </a>
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
                         <Link href="/"><a className="mr-5 hover:text-white">Home</a></Link>
-                    </nav>
                 
+                    </nav>
                     {!userstate ? <Login  setuser={setuserstate} /> : <Logout username={username} setuser={setuserstate} />}
+                </div>
                     
+            </header>       
                   
                     
-                </div>
-            </header>        </>
+            
+             </>
     )
 }
 

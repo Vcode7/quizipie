@@ -20,7 +20,7 @@ const Answer = ({ Ans ,username, id }) => {
        setPlayerName(iPlayerName)
     }
     const [fs, setFs] = useState([])
-    
+    const [run, setRun] = useState(true)
     const getscore = async ()=>{
         let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getscore`, {
             method: 'POST',
@@ -58,12 +58,12 @@ const Answer = ({ Ans ,username, id }) => {
           }
           
      useEffect(() => {
-        if(!Question[quenum]){
-            console.log('send answer')
-            update();   
+        if(!Question[quenum] && run){
+            update(); 
             setTimeout(() => {
                getscore()    
             }, 1000);
+            setRun(false)
     }});
 
     const handleClick = (num)=>{
@@ -113,20 +113,21 @@ const Answer = ({ Ans ,username, id }) => {
                
              <section className="text-gray-300 body-font bg-gray-900">
              <div className="container px-5 py-2 mx-auto flex flex-wrap">
-               <div className="flex flex-col text-center w-full mb-20">
-                 <div className="p-4 md:w-1/3 mx-auto mb-7">
+               <div className="flex flex-col text-center w-full ">
+                 <div className="p-3 md:w-1/3 rounded-lg mx-auto mb-5 bg-gray-800">
                  <div className=" px-10 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
                           Score : <span>{score}</span>
                         </div>
-                        <div className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
-                     <div className="flex items-center mb-3 my-2">
-                       <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
-                         <span>{quenum}</span>
-                       </div>
+                  <div className="flex  h-full bg-opacity-60 p-8 flex-col ">
+                     <div className="flex items-center mb-3 my-2 ">
                        <h2 className="text-white mx-10 text-lg title-font font-medium">
-                         You Friend {Question[quenum].question}
+                       <div className="w-8 h-8 md:mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                         <span>{quenum+1}</span>
+                       </div>
+                         Your Friend {Question[quenum].question}
                        </h2>
                      </div>
+
                    </div>
                  </div>
                  <hr className='bg-gray-200'/>
@@ -138,7 +139,7 @@ const Answer = ({ Ans ,username, id }) => {
                          <Image className='hover:outline rounded-2xl ' width={200} height={180} src={op.link} alt="" />
                        </div>
                      </div>)
-                   })} 
+                   })}
                    </div>
                  </div>
                </div>

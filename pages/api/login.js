@@ -14,12 +14,12 @@ const handler = async (req, res) => {
 
       }
       else{
-        var bytes  = CryptoJS.AES.decrypt(userem[0].Password, '7204968501');
+        var bytes  = CryptoJS.AES.decrypt(userem[0].Password, process.env.JWT_CODE);
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
         if (decryptedData == req.body.password) 
         {
-          var token = jwt.sign({user : { "username" : userem[0].UserName , "id": userem[0]._id}}, '7204968501');
+          var token = jwt.sign({user : { "username" : userem[0].UserName , "id": userem[0]._id}}, process.env.JWT_CODE);
           res.status(200).json({ login: true , token })     
         }
         else {

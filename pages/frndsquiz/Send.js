@@ -31,7 +31,7 @@ const Send = ({id}) => {
             copied
         </h1>
         
-      
+      {id?
         <p className="bg-gray-600 p-4 break-all rounded-lg leading-relaxed mb-8">
         {url}
         <CopyToClipboard text={url}
@@ -41,10 +41,12 @@ const Send = ({id}) => {
             setCopied(false)
           }, 1000);
         }}
-          >
+        >
           <button className='inline-flex text-white bg-red-500 m-2 border-0 py-1 px-3 focus:outline-none hover:bg-red-600 rounded'>copy</button>
         </CopyToClipboard>
+
       </p>
+: <p className="bg-gray-600 p-4 break-all rounded-lg leading-relaxed mb-8">generting link please wait...</p> }
 
       <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             or share with
