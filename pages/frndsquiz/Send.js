@@ -10,10 +10,10 @@ import { FacebookIcon } from "react-share";
 import { FacebookShareButton } from "react-share";
 
 
-const Send = ({id}) => {
+const Send = ({id,name}) => {
     const [copied, setCopied] = useState(false)
     const url = `${process.env.NEXT_PUBLIC_HOST}/frndsquiz/challenge/${id}`
-
+    const message = ` ${name} as send friendship quiz challenge click the link and see how much u know about your friend`;
   return (
     <div className='text-gray-400 bg-gray-900 body-font'>
 
@@ -51,7 +51,7 @@ const Send = ({id}) => {
       <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             or share with
         </h1>
-        <WhatsappShareButton url={url} title=" Your friends as send friendship quiz challenge click the link and see how much u know about your friend">
+        <WhatsappShareButton url={url} title={message}>
             <WhatsappIcon className='rounded-full mx-2' size={30}></WhatsappIcon>
         </WhatsappShareButton>
         <FacebookShareButton url={url}>

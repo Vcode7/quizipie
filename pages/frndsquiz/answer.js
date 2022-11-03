@@ -83,7 +83,7 @@ console.log(response)
 
            </section>
     :
-    <Send id={id}/>
+    <Send id={id} name={name}/>
     }
     </div>
   )
