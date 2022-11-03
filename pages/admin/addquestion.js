@@ -9,12 +9,15 @@ import {
   FormControl,
   Button,
 } from "@mui/material";
+
 import BaseCard from "../../src/components/baseCard/BaseCard";
 import * as React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../src/theme/theme";
 import FullLayout from "../../src/layouts/FullLayout";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Forms = () => {
@@ -56,20 +59,55 @@ const Forms = () => {
 
         let response = await res.json();
         if (response.qusetionadded) {
-console.log('successfully added')
+          toast.success('successfully added!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
 
         }
         else {
-console.log('failed')
+          toast.error('error', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
         }
 
-    } catch (error) {
-        console.log(error)
+    } catch (er) {
+      toast.error('error', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
     }
   }
   return (
 
     <ThemeProvider theme={theme}>
+        <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
       <FullLayout>
 
       <Grid item xs={12} lg={12}>
@@ -96,8 +134,6 @@ console.log('failed')
                 <FormControlLabel value="art and literature" control={<Radio />} label="art and literature"/>
                 <FormControlLabel value="geography" control={<Radio />} label="geography"/>
                 <FormControlLabel value="movie" control={<Radio />} label="movie"/>
-                <FormControlLabel value="n" control={<Radio />} label="n"/>
-                <FormControlLabel value="B" control={<Radio />} label="B"/>
                 <FormControlLabel value="sports" control={<Radio />} label="sports"/>
                 <FormControlLabel value="technology" control={<Radio />} label="technology"/>
                 <FormControlLabel value="animal" control={<Radio />} label="animal"/>

@@ -66,30 +66,30 @@ export default function Quiz({Quizs}) {
            
         <div className="container px-5 py-10 mb:py-4 mx-auto flex flex-wrap">
         {Quizs[number] && wronganswer < 3 ? <div key={Quizs[number]._id} className="flex flex-col text-center border w-full mb-20">
-                <div className=" px-10 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
+                <div className=" px-5 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
                           Score : <span>{score}</span>
                         </div>
             <div className="p-4 mt-8 md:min-w-fit mx-auto">
               <div className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
                 <div className="flex items-center mb-3 my-2">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                  <h2 className="text-white mx-10 text-lg title-font font-medium">
+                  <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                     <span>{number+1}</span>
                   </div>
-                  <h2 className="text-white mx-10 text-lg title-font font-medium">
                     {Quizs[number].Question}
                   </h2>
                 </div>
               </div>
             </div>
             <section className="text-gray-400 bg-gray-900 body-font">
-              <div className="container px-10 pt-10 pb-24 mb:py-4 mx-auto">
+              <div className="container px-5 pt-10 pb-24 mb:py-4 mx-auto">
 
                 <div className="flex flex-wrap -m-4 text-center">
                   <div className="p-2 md:w-1/4 mx-auto sm:w-1/2 w-75">
                  
                     <div onClick={()=>{handleClick(Quizs[number].Options[0].correct)}} className="border-2 border-gray-800 px-8 py-2 hover:text-lg text-gray-400 hover:text-gray-200 hover:outline hover:outline-1 rounded-lg">
                       <div className="flex items-center mb-3 my-2">
-                        <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                        <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                           <span>A</span>
                         </div>
                         <h2 className="title-font font-medium">
@@ -102,7 +102,7 @@ export default function Quiz({Quizs}) {
                   
                     <div onClick={()=>{handleClick(Quizs[number].Options[1].correct)}} className="border-2 border-gray-800 px-8 py-2 hover:text-lg text-gray-400 hover:text-gray-200 hover:outline hover:outline-1 rounded-lg">
                       <div className="flex items-center mb-3">
-                        <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                        <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                           <span>B</span>
                         </div>
                         <h2 className="title-font font-medium">
@@ -117,7 +117,7 @@ export default function Quiz({Quizs}) {
                     
                     <div onClick={()=>{handleClick(Quizs[number].Options[2].correct)}} className="border-2 border-gray-800 px-8 py-2 hover:text-lg text-gray-400 hover:text-gray-200 hover:outline hover:outline-1 rounded-lg">
                       <div className="flex items-center mb-3 my-2">
-                        <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                        <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                           <span>C</span>
                         </div>
                         <h2 className="title-font font-medium">
@@ -131,7 +131,7 @@ export default function Quiz({Quizs}) {
                   
                     <div onClick={()=>{handleClick(Quizs[number].Options[3].correct)}} className=" border-2 border-gray-800 px-8 py-2 hover:text-lg text-gray-400 hover:text-gray-200 hover:outline hover:outline-1 rounded-lg">
                       <div className="flex items-center mb-3 my-2">
-                        <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                        <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                           <span>D</span>
                         </div>
                         <h2 className="title-font font-medium">

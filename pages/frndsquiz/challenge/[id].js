@@ -115,13 +115,13 @@ const Answer = ({ Ans ,username, id }) => {
              <div className="container px-5 py-2 mx-auto flex flex-wrap">
                <div className="flex flex-col text-center w-full ">
                  <div className="p-3 md:w-1/3 rounded-lg mx-auto mb-5 bg-gray-800">
-                 <div className=" px-10 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
+                 <div className=" px-5 py-2 inline-flex items-center justify-center  bg-red-500 text-white flex-shrink-0">
                           Score : <span>{score}</span>
                         </div>
                   <div className="flex  h-full bg-opacity-60 p-8 flex-col ">
                      <div className="flex items-center mb-3 my-2 ">
                        <h2 className="text-white mx-10 text-lg title-font font-medium">
-                       <div className="w-8 h-8 md:mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
+                       <div className="w-8 h-8 mx-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
                          <span>{quenum+1}</span>
                        </div>
                          Your Friend {Question[quenum].question}
