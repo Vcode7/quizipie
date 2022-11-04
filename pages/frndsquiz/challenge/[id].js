@@ -6,9 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//import Result from '../Result'
 
-const Answer = ({ Ans ,username, id }) => {
+const Answer = ({ Ans ,username, id , setSpin}) => {
   const [quenum, setQuenum] = useState(0)
     const [PlayerName, setPlayerName] = useState("")
     const [iPlayerName, setiPlayerName] = useState("")

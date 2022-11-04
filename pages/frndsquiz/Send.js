@@ -11,7 +11,8 @@ import { FacebookShareButton } from "react-share";
 
 
 const Send = ({id,name}) => {
-  setSpin(false)
+
+  
     const [copied, setCopied] = useState(false)
     const url = `${process.env.NEXT_PUBLIC_HOST}/frndsquiz/challenge/${id}`
     const message = ` ${name} as send friendship quiz challenge click the link and see how much u know about your friend`;

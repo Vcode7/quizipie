@@ -1,11 +1,14 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React,{ useEffect} from 'react'
+import { useRouter  } from 'next/router'
 
 import Image from 'next/image'
 import FeatherIcon from "feather-icons-react";
 import Link from 'next/link';
 
 const Stater = ({setSpin}) => {
+  useEffect(() => {
+    setSpin(false)
+  }, [])
   const router = useRouter()
 
   const catagrey = [

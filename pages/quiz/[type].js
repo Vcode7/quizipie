@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import Quizdata from '../../models/Quiz'
 import mongoose from 'mongoose'
 import Link from 'next/link';
@@ -8,6 +8,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Quiz({Quizs , setSpin}) {
+  
+  useEffect(() => {
+    setSpin(false)
+  }, [])
   const [number, setNumber] = useState(0)
   const [score, setScore] = useState(0)
   const [wronganswer, setWronganswer] = useState(0)

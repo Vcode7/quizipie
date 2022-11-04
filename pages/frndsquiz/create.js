@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import Answer from './answer'
 
 const Create = ({setSpin}) => {
-  setSpin(false)
+
+  useEffect(() => {
+    setSpin(false)
+  }, [])
   const [name, setName] = useState('')
   const [next, setNext] = useState(false)
   const handlechange = (e)=>{
     setName(e.target.value)
   }
   const handleclick = () =>{
-    setSpin(true)
      setNext(true)
-     setSpin(false)
   }
   return (
     <div>
