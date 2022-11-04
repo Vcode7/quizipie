@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import Head from 'next/head';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
-import { Spin } from './components/Spin';
+import Spin from './components/Spin';
 import { useState } from 'react';
 
 
