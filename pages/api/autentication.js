@@ -12,12 +12,12 @@ const handler = async (req, res) => {
       let p = new User({
         UserName: req.body.name,
         Email: req.body.email,
-        Password: CryptoJS.AES.encrypt(JSON.stringify(req.body.password), process.env.JWT_CODE).toString(),
+        Password: CryptoJS.AES.encrypt(JSON.stringify(req.body.password), process.env.NEXT_PUBLIC_JWT_CODE).toString(),
       })
 
       await p.save();
 
-      var token = jwt.sign({user : { "username" : userem[0].UserName , "id": userem[0]._id}}, process.env.JWT_CODE);
+      var token = jwt.sign({user : { "username" : p.UserName , "id": p._id}}, process.env.NEXT_PUBLIC_JWT_CODE);
       
       res.status(200).json({ login: true , token: token })
       }

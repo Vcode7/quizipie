@@ -13,8 +13,8 @@ const Nav = () => {
 
         var token = localStorage.getItem("token"); 
         if(token){
-            setuserstate(token );
-            var decoded = jwt.verify(token, process.env.JWT_CODE);
+            setuserstate(token);
+            var decoded = jwt.verify(token, process.env.NEXT_PUBLIC_JWT_CODE);
             setUsername(decoded.user.username)
         }
         else {
