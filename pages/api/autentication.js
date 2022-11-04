@@ -16,9 +16,10 @@ const handler = async (req, res) => {
       })
 
       await p.save();
+
       var token = jwt.sign({user : { "username" : userem[0].UserName , "id": userem[0]._id}}, process.env.JWT_CODE);
       
-      res.status(200).json({ login: true , token })
+      res.status(200).json({ login: true , token: token })
       }
       else{
         res.status(200).json({login: false, error: 'email already exsist' })

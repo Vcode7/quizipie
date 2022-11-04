@@ -38,7 +38,6 @@ const Login = ({ setuser }) => {
         e.preventDefault();
         const data = { name, email, password }
         console.log(data)
-        try {
 
             let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/autentication`, {
                 method: 'POST',
@@ -84,17 +83,7 @@ const Login = ({ setuser }) => {
                 });
             }
 
-        } catch (error) {
-            toast.error("error", {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        }
+    
     }
     const handlelogin = async (e) => {
 
