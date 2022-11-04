@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import FeatherIcon from "feather-icons-react";
 
-const Logout = ({setuser , username }) => {
+const Logout = ({setuser , username , setSpin }) => {
   const [showprofile, setShowprofile] = useState(false)
   const handleClick = ()=>{
+    setSpin(true)
     localStorage.removeItem('token')
     setuser(false)
+    setSpin(false)
   }
   const toggel =()=>{
       setShowprofile(!showprofile)

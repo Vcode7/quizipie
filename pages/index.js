@@ -2,10 +2,10 @@
 import Stater from './components/Stater';
 
 
-export default function Home() {
+export default function Home({setSpin}) {
   return (
     <> 
-        <Stater />         
+        <Stater setSpin={setSpin} />         
     </>
   )
 }

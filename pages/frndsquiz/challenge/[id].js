@@ -160,7 +160,7 @@ const Answer = ({ Ans ,username, id }) => {
           Create Your Own quiz and send to all your friends n know who knows you better 
         </p>
         <div className="flex justify-center">
-          <Link href="/frndsquiz/create"><a><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">create Quiz</button></a></Link>
+          <Link href="/frndsquiz/create"><a onClick={()=>{setSpin(true)}} ><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">create Quiz</button></a></Link>
         </div>
   
   
@@ -207,7 +207,7 @@ const Answer = ({ Ans ,username, id }) => {
         Thank you to play the quiz on our platform , you may like to attend more different quiz , please click the below button 
       </p>
       <div className="flex justify-center">
-        <Link href="/#newquiz"><a><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">New Quiz</button></a></Link>
+        <Link href="/#newquiz"><a onClick={()=>{setSpin(true)}} ><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">New Quiz</button></a></Link>
       </div>
     </div>
   </div>

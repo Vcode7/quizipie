@@ -4,8 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Login = ({ setuser }) => {
-
+const Login = ({ setuser , setSpin }) => {
     const [showlogin, setShowlogin] = useState(false);
     const [showsingin, setshowsingin] = useState(false);
     const [name, setName] = useState('');
@@ -35,6 +34,7 @@ const Login = ({ setuser }) => {
         }
     }
     const handleSingin = async (e) => {
+        setSpin(true)
         e.preventDefault();
         const data = { name, email, password }
         console.log(data)
@@ -53,6 +53,7 @@ const Login = ({ setuser }) => {
             setPassword('')
 
             if (response.login) {
+                setSpin(false)
                 toast.success('successfully logedin!', {
                     position: "top-center",
                     autoClose: 5000,
@@ -72,6 +73,7 @@ const Login = ({ setuser }) => {
 
             }
             else {
+                setSpin(false)
                 toast.error(response.error, {
                     position: "top-center",
                     autoClose: 5000,
@@ -87,8 +89,8 @@ const Login = ({ setuser }) => {
     }
     const handlelogin = async (e) => {
 
+        setSpin(true)
         e.preventDefault();
-
         let data = { email, password }
         let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
             method: 'POST',
@@ -103,6 +105,7 @@ const Login = ({ setuser }) => {
         setEmail('')
         setPassword('')
         if (response.login) {
+            setSpin(false)
             toast.success('successfully logedin!', {
                 position: "top-center",
                 autoClose: 5000,
@@ -122,6 +125,7 @@ const Login = ({ setuser }) => {
             setshowsingin(false);
         }
         else {
+            setSpin(false)
             toast.error(response.error, {
                 position: "top-center",
                 autoClose: 5000,

@@ -6,7 +6,7 @@ import Link from 'next/link';
 const jwt = require('jsonwebtoken');
 
 
-const Nav = () => {
+const Nav = ({setSpin}) => {
     const [username, setUsername] = useState('')
     const [userstate, setuserstate] = useState(false);
     useEffect(() => {
@@ -36,7 +36,7 @@ const Nav = () => {
                         <Link href="/"><a className="mr-5 hover:text-white">Home</a></Link>
                 
                     </nav>
-                    {!userstate ? <Login  setuser={setuserstate} /> : <Logout username={username} setuser={setuserstate} />}
+                    {!userstate ? <Login  setSpin={setSpin} setuser={setuserstate} /> : <Logout username={username} setSpin={setSpin} setuser={setuserstate} />}
                 </div>
                     
             </header>       

@@ -7,12 +7,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Quiz({Quizs}) {
-
+export default function Quiz({Quizs , setSpin}) {
   const [number, setNumber] = useState(0)
   const [score, setScore] = useState(0)
   const [wronganswer, setWronganswer] = useState(0)
   const handleClick=(op)=>{
+    setSpin(true)
       if(op == 1){
         setNumber(number+1)
         console.log('hello')
@@ -26,23 +26,23 @@ export default function Quiz({Quizs}) {
           draggable: true,
           progress: undefined,
       });
-
+    }
+    else{
+      setNumber(number+1)
+      setWronganswer(wronganswer+1)
+      if(wronganswer < 2){
+        toast.error(`wrong answer , ${2-wronganswer} chance left `, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
-      else{
-        setNumber(number+1)
-        setWronganswer(wronganswer+1)
-        if(wronganswer < 2){
-          toast.error(`wrong answer , ${2-wronganswer} chance left `, {
-            position: "top-center",
-            autoClose: 1000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-        }
-      }
+    }
+    setSpin(false)
 
 
   }
@@ -159,14 +159,14 @@ export default function Quiz({Quizs}) {
   Thank you to play the quiz on our platform , you may like to attend more different quiz , please click the below button 
 </p>
 <div className="flex justify-center">
-  <Link href="/#newquiz"><a><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg" >New Quiz    </button></a></Link>
+  <Link href="/#newquiz"><a onClick={()=>{setSpin(true)}}><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg" >New Quiz    </button></a></Link>
 </div>
 </div>
 <p className="leading-relaxed my-8">
     Create Your Own quiz and send to all your friends n know who knows you better 
   </p>
   <div className="flex justify-center">
-    <Link href="/frndsquiz/create"><a><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">create Quiz</button></a></Link>
+    <Link  href="/frndsquiz/create"><a onClick={()=>{setSpin(true)}}><button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">create Quiz</button></a></Link>
   </div>
 
 </div>

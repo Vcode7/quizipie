@@ -5,7 +5,7 @@ import Image from 'next/image'
 import FeatherIcon from "feather-icons-react";
 import Link from 'next/link';
 
-const Stater = () => {
+const Stater = ({setSpin}) => {
   const router = useRouter()
 
   const catagrey = [
@@ -55,7 +55,7 @@ const Stater = () => {
     <div className="flex flex-wrap -m-4">
       {catagrey.map((quiz)=>{return <div key={quiz.type} className="p-4 md:w-1/3">
 
-        <div onClick={()=>{router.push(`/quiz/${quiz.type}`)}} className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
+        <div onClick={()=>{setSpin(true);router.push(`/quiz/${quiz.type}`)}} className="flex rounded-lg h-full bg-gray-800 bg-opacity-60 p-8 flex-col">
           <div className="flex items-center mb-3">
             <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white flex-shrink-0">
             <FeatherIcon icon={quiz.type} color="red" strokeWidth="3px" />
@@ -86,7 +86,7 @@ const Stater = () => {
       Have you ever wondered which friend knows you the best? Test your mates by creating your own trivia quiz.
       </h1>
       <div className="flex justify-center">
-        <Link href='/frndsquiz/create'><a>
+        <Link href='/frndsquiz/create'><a onClick={()=>{setSpin(true)}} >
         <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Click here</button>
         </a></Link>
 </div>
