@@ -8,6 +8,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Answer = ({ Ans ,username, id , setSpin}) => {
+  useEffect(() => {
+    setSpin(false)
+  }, [])
   const [quenum, setQuenum] = useState(0)
     const [PlayerName, setPlayerName] = useState("")
     const [iPlayerName, setiPlayerName] = useState("")
@@ -16,7 +19,11 @@ const Answer = ({ Ans ,username, id , setSpin}) => {
       setiPlayerName(e.target.value)
     }
     const handleclick = () =>{
-       setPlayerName(iPlayerName)
+      setSpin(true)
+      setTimeout(() => {
+        setPlayerName(iPlayerName)
+        setSpin(false)
+      }, 200);
     }
     const [fs, setFs] = useState([])
     const [run, setRun] = useState(true)
@@ -66,6 +73,10 @@ const Answer = ({ Ans ,username, id , setSpin}) => {
     }});
 
     const handleClick = (num)=>{
+        setSpin(true)
+        setTimeout(() => {
+          
+        
         if(Ans[quenum]==num){
           setscore(score+1)
             toast.success(`right answer`, {
@@ -90,6 +101,8 @@ const Answer = ({ Ans ,username, id , setSpin}) => {
           });
         }
         setQuenum(quenum+1)
+        setSpin(false)
+      }, 200);
     }
   return (
       <div>
