@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
@@ -10,8 +10,13 @@ import { FacebookIcon } from "react-share";
 import { FacebookShareButton } from "react-share";
 
 
-const Send = ({id,name}) => {
-
+const Send = ({id,name,setSpin}) => {
+  useEffect(() => {
+    setSpin(true)
+    setTimeout(() => {
+      setSpin(false)
+    }, 200);
+  }, [])
   
     const [copied, setCopied] = useState(false)
     const url = `${process.env.NEXT_PUBLIC_HOST}/frndsquiz/challenge/${id}`

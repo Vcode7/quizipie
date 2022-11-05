@@ -4,7 +4,10 @@ import { Question } from './question'
 import Send from './Send'
 import Image from 'next/image'
 
-const Answer = ({ name}) => {
+const Answer = ({ name , setSpin}) => {
+  useEffect(() => {
+    setSpin(false)
+  }, [])
   const [quenum, setQuenum] = useState(0)
   const [ans, setAns] = useState([])
   const [id, setId] = useState(false)
@@ -41,9 +44,14 @@ const Answer = ({ name}) => {
 
   }
   const handleClick = (num) => {
-    setAns(ans => [...ans, num]);
-    setQuenum(quenum + 1)
-  }
+    setSpin(true)
+    setTimeout(() => {
+      
+      setAns(ans => [...ans, num]);
+      setQuenum(quenum + 1)
+      setSpin(false)
+    }, 200);
+    }
 
 
   return (
@@ -80,7 +88,7 @@ const Answer = ({ name}) => {
 
       </section>
         :
-        <Send id={id} name={name} />
+        <Send id={id} setSpin={setSpin} name={name} />
       }
     </div>
   )

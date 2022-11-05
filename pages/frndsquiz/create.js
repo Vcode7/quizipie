@@ -12,11 +12,12 @@ const Create = ({setSpin}) => {
     setName(e.target.value)
   }
   const handleclick = () =>{
+    setSpin(true)
      setNext(true)
   }
   return (
     <div>
-    {next? <Answer name={name}/> :
+    {next? <Answer setSpin={setSpin} name={name}/> :
         <section className="text-gray-400 bg-gray-900 body-font">
   <div className="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
     

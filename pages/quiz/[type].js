@@ -17,6 +17,9 @@ export default function Quiz({Quizs , setSpin}) {
   const [wronganswer, setWronganswer] = useState(0)
   const handleClick=(op)=>{
     setSpin(true)
+    setTimeout(() => {
+      
+   
       if(op == 1){
         setNumber(number+1)
         console.log('hello')
@@ -47,7 +50,7 @@ export default function Quiz({Quizs , setSpin}) {
       }
     }
     setSpin(false)
-
+  }, 250);
 
   }
   

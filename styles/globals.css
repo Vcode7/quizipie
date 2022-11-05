@@ -12,7 +12,7 @@
 .spinner{
   width: 100vw;
   height: 100vh;
-  position: sticky;
+  position: fixed;
   z-index: 99;
   display: flex;
   top: 0px;

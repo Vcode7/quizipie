@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Stater = ({setSpin}) => {
   useEffect(() => {
     setSpin(false)
-  }, [])
+  },[])
   const router = useRouter()
 
   const catagrey = [
