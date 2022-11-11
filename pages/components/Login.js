@@ -126,7 +126,7 @@ const Login = ({ setuser , setSpin }) => {
         }
         else {
             setSpin(false)
-            toast.error(response.error, {
+            toast.error( response.error , {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,

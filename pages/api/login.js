@@ -10,7 +10,7 @@ const handler = async (req, res) => {
 
       if(!userem[0]){
 
-         res.status(200).json({ login:false , "error" : "email doesnot exsist" })
+         res.status(200).json({ login:false , error : "email doesnot exsist" })
 
       }
       else{
@@ -23,7 +23,7 @@ const handler = async (req, res) => {
           res.status(200).json({ login: true , token : token })     
         }
         else {
-          res.status(200).json({ login:false , "error": 'Invalid password' })
+          res.status(200).json({ login:false , error: 'Invalid password' })
         }
       }
     }
