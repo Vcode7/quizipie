@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
     <>
     <Head>
         <meta charSet="UTF-8" />
+        <meta name="google-site-verification" content="Q5Ls_z5IJJkH8GmImHwNKNRVwOrtU42fBtb7fhpRdN8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Quizipie - 2022</title>
